@@ -51,27 +51,6 @@ Navigating dense company policy handbooks (leave policies, remote work, health i
 
 ---
 
-## System Architecture
-
-The core question-answering workflow is modeled as a compiled **LangGraph** state machine:
-
-```mermaid
-flowchart TD
-    Start([User Question]) --> Retrieve[Node: retrieve\nFetch Top-K Chunks via ChromaDB]
-    Retrieve --> Grade[Node: grade\nScore chunks against RELEVANCE_THRESHOLD]
-    
-    Grade -->|Score >= Threshold| Generate[Node: generate\nLLM Generation via Groq with Backoff Retry]
-    Grade -->|Score < Threshold / No Chunks| Escalate[Node: escalate\nGenerate polite HR Escalation Message]
-    
-    Generate -->|Success| Cite[Node: cite\nParse [n] markers into structured citations]
-    Generate -->|LLM Failure / Timeout| Escalate
-    
-    Cite --> End([Return Grounded Answer + Sources])
-    Escalate --> End([Return Escalation Notice to HR])
-```
-
----
-
 ## Project Structure
 
 ```text
