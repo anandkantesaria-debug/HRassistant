@@ -10,7 +10,6 @@ Built with **LangGraph**, **ChromaDB**, **Streamlit**, and **LangSmith**.
 
 - [Overview](#overview)
 - [Key Features](#key-features)
-- [System Architecture](#system-architecture)
 - [Project Structure](#project-structure)
 - [Prerequisites](#prerequisites)
 - [Installation & Setup](#installation--setup)
