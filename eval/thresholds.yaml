@@ -1,0 +1,5 @@
+retrieval_hit: 0.85
+correct_escalation: 0.85
+correctness: 0.70
+groundedness: 0.80
+

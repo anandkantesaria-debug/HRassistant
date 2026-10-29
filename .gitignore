@@ -1,0 +1,94 @@
+# ==============================================================================
+# Environment & Secrets
+# ==============================================================================
+.env
+.env.*
+!.env.example
+*.env
+.streamlit/secrets.toml
+
+# ==============================================================================
+# User Data, Policies & Vector Database (DO NOT COMMIT)
+# ==============================================================================
+# Policy documents (e.g., employee handbooks, company policy PDFs)
+data/policies/*
+!data/policies/.gitkeep
+/policies/
+*.pdf
+
+# Chroma vector database & local databases
+data/chroma/
+chroma/
+*.sqlite
+*.sqlite3
+*.db
+
+# Runtime data & user feedback logs
+data/feedback.jsonl
+data/*.jsonl
+data/*.csv
+data/*.parquet
+
+# ==============================================================================
+# Python & Virtual Environments
+# ==============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+.venv/
+venv/
+env/
+ENV/
+
+# ==============================================================================
+# Build & Distribution Artifacts
+# ==============================================================================
+build/
+dist/
+*.egg-info/
+*.egg
+*.whl
+
+# ==============================================================================
+# Tooling, Testing & Coverage Caches
+# ==============================================================================
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# ==============================================================================
+# IDE & Editor Configurations
+# ==============================================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ==============================================================================
+# Operating System Artifacts
+# ==============================================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# ==============================================================================
+# Logs
+# ==============================================================================
+*.log
+logs/

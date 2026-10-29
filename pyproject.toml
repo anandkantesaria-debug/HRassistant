@@ -1,0 +1,45 @@
+[project]
+name = "hrbot"
+version = "0.1.0"
+description = "HR Policy Chatbot - RAG chatbot answering employee questions from HR policy PDFs, with citations."
+requires-python = ">=3.11"
+dependencies = [
+    "streamlit",
+    "langgraph",
+    "langchain",
+    "langchain-core",
+    "langchain-openai",
+    "langchain-chroma",
+    "langchain-huggingface",
+    "langchain-text-splitters",
+    "chromadb",
+    "sentence-transformers",
+    "pymupdf",
+    "langsmith",
+    "pydantic-settings",
+    "python-dotenv",
+    "pyyaml",
+    "torch>=2.14.1",
+    "torchvision>=0.29.1",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "ruff",
+    "reportlab",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "integration: marks tests as requiring external services or model downloads",
+]
+addopts = "-m 'not integration' --ignore-glob='*_omniroute.py'"
